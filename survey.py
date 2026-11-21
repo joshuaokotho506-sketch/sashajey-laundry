@@ -95,9 +95,26 @@ def prices():
 @app.route('/book', methods=['GET','POST'])
 def book():
     if request.method == 'POST':
+        import urllib.parse
         oid = f"SJ{random.randint(1000,9999)}"
-        orders.append({"id": oid, "name": request.form.get('name'), "phone": request.form.get('phone'), "area": request.form.get('area'), "service": request.form.get('service'), "kg": request.form.get('kg'), "status": "Received - Waiting for Pickup", "time": str(datetime.datetime.now())[:19]})
-        return base("Booked! - SashaJey Lahndry", f"""<div style="padding:40px; text-align:center;"><h1>✅ ORDER RECEIVED!</h1><h2>Your Order ID: <span style="color:#ff7a00;">{oid}</span></h2><p>Asante {request.form.get('name')}! Tutakupigia {request.form.get('phone')} in 30 mins.</p><a href="/track">Track My Order</a><br><br><a href="/">Back Home</a></div>""")
+        name = request.form.get('name','')
+        phone = request.form.get('phone','')
+        area = request.form.get('area','')
+        service = request.form.get('service','')
+        kg = request.form.get('kg','')
+        orders.append({"id": oid, "name": name, "phone": phone, "area": area, "service": service, "kg": kg})
+        
+        msg = f"Hello SashaJey Laundry! NEW BOOKING Order: {oid} Jina: {name} Namba: {phone} Service: {service} Kilo: {kg} Area: {area}"
+        wa_url = "https://wa.me/254798408312?text=" + urllib.parse.quote(msg)
+        
+        return base("Booked! - SashaJey Laundry", f"""
+        <div style="padding:20px;max-width:550px;margin:auto;background:white;border-radius:15px;text-align:center">
+        <h2>✅ Booking Imefanikiwa!</h2>
+        <p>Order ID yako: <b>{oid}</b></p>
+        <p>Asante {name}! Tunakuchukulia hivi karibuni.</p>
+        <a href="{wa_url}" target="_blank" style="display:block;background:#25D366;color:white;padding:15px;border-radius:10px;text-decoration:none;font-weight:bold;font-size:18px;margin-top:15px">📲 Thibitisha kwa WhatsApp</a>
+        <p style="margin-top:15px;color:#666">Bonyeza hapo juu ili ujumbe uje kwangu moja kwa moja WhatsApp</p>
+       gia {request.form.get('phone')} in 30 mins.</p><a href="/track">Track My Order</a><br><br><a href="/">Back Home</a></div>""")
     options = "".join([f"<option>{s['name']} - KSH {s['price']} {s['unit']}</option>" for s in services])
     return base("Book - SashaJey Lahndry", f"""
     <div style="padding:20px; max-width:550px; margin:auto; background:white; border-radius:15px;"><h1>BOOK FREE PICKUP</h1>
