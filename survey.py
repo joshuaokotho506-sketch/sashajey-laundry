@@ -71,9 +71,9 @@ def home():
     <div style="padding:20px; text-align:center;">
     <h2> Our Work - Nguo Tulizofua</h2>
     <p style="color:#666">Hivi ndivyo nguo zako zitakavyoonekana!</p>
-    <img src="https://raw.githubusercontent.com/joshuaokotmo506-sketch/sashajey-laundry/main/Wash.jpg" style="width:260px;height:220px;object-fit:cover;border-radius:12px;margin:5px">
-    <img src="https://raw.githubusercontent.com/joshuaokotmo506-sketch/sashajey-laundry/main/Wash.jpg" style="width:260px;height:220px;object-fit:cover;border-radius:12px;margin:5px">
-    <img src="https://raw.githubusercontent.com/joshuaokotmo506-sketch/sashajey-laundry/main/Wash.jpg" style="width:260px;height:220px;object-fit:cover;border-radius:12px;margin:5px">
+    <img src="https://raw.githubusercontent.com/joshuaokotho506-sketch/sashajey-laundry/main/Wash.jpg" style="width:260px;height:220px;object-fit:cover;border-radius:12px;margin:5px">
+    <img src="https://raw.githubusercontent.com/joshuaokotho506-sketch/sashajey-laundry/main/Wash.jpg" style="width:260px;height:220px;object-fit:cover;border-radius:12px;margin:5px">
+    <img src="https://raw.githubusercontent.com/joshuaokotho506-sketch/sashajey-laundry/main/Wash.jpg" style="width:260px;height:220px;object-fit:cover;border-radius:12px;margin:5px">
     <p><b>Wash & Fold - From KSH 150 / Kg | Wash & Iron - From KSH 250 / Kg</b></p>
     <div style="padding:20px; text-align:center;"><h2>OUR SERVICES</h2>{cards}</div>
     <div style="padding:20px; text-align:center; background:white;">
