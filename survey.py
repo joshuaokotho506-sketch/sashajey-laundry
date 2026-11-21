@@ -137,6 +137,30 @@ def admin():
     return base("Admin - SashaJey Lahndry", f"""<div style="padding:20px;"><h1>ADMIN - ALL ORDERS ({len(orders)})</h1><table border="1" style="width:100%; background:white; border-collapse:collapse;"><tr style="background:#0066cc; color:white;"><th>ID</th><th>Customer</th><th>Service</th><th>Area</th><th>Status</th></tr>{rows}</table></div>""")
 
 import os
+# ===== PRICE LIST + WHATSAPP + MORE PHOTOS =====
+@app.route('/prices')
+def prices():
+    return base("Prices - SashaJey Laundry", """
+    <div style="padding:20px;max-width:800px;margin:auto;">
+    <h2>💰 Price List - No Hidden Charges</h2>
+    <table style="width:100%;border-collapse:collapse;background:white;">
+    <tr style="background:#0a7cff;color:white;"><th style="padding:12px;text-align:left;">Service</th><th>Price</th><th>Time</th></tr>
+    <tr><td style="padding:12px;">Wash & Fold (per Kg)</td><td><b>KSH 150</b></td><td>24 Hours</td></tr>
+    <tr><td style="padding:12px;">Wash & Iron (per Kg)</td><td><b>KSH 250</b></td><td>24 Hours</td></tr>
+    <tr><td style="padding:12px;">Dry Cleaning</td><td><b>KSH 350</b></td><td>48 Hours</td></tr>
+    <tr><td style="padding:12px;">Duvet - Single</td><td><b>KSH 500</b></td><td>48 Hours</td></tr>
+    <tr><td style="padding:12px;">Duvet - Double / King</td><td><b>KSH 800</b></td><td>48 Hours</td></tr>
+    <tr><td style="padding:12px;">Shoes / Sneakers</td><td><b>KSH 400</b></td><td>48 Hours</td></tr>
+    </table>
+    <br>
+    <h2>📸 More Of Our Work</h2>
+    <img src="https://raw.githubusercontent.com/joshuaokotho506-sketch/sashajey-laundry/main/Wash4.jpg" style="width:260px;height:220px;object-fit:cover;border-radius:12px;margin:5px;">
+    <img src="https://raw.githubusercontent.com/joshuaokotho506-sketch/sashajey-laundry/main/Wash5.jpg" style="width:260px;height:220px;object-fit:cover;border-radius:12px;margin:5px;">
+    <img src="https://raw.githubusercontent.com/joshuaokotho506-sketch/sashajey-laundry/main/Wash6.jpg" style="width:260px;height:220px;object-fit:cover;border-radius:12px;margin:5px;">
+    <br><br>
+    <a href="https://wa.me/254700000000?text=Hi%20SashaJey%20Laundry!%20Nataka%20ku-book" style="background:#25D366;color:white;padding:14px 22px;border-radius:30px;font-weight:bold;text-decoration:none;">💬 Order on WhatsApp</a>
+    </div>
+    """)
 if __name__== '__main__':
     port = int(os.environ.get('PORT', 5001))
-    app.run(host='0.0.0', port=port)
+    app.run(host='0.0.0', port=port) 
