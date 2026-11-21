@@ -138,8 +138,8 @@ def admin():
 
 import os
 # ===== PRICE LIST + WHATSAPP + MORE PHOTOS =====
-@app.route('/prices')
-def prices():
+@app.route('/prices-list')
+def prices_page():
     return base("Prices - SashaJey Laundry", """
     <div style="padding:20px;max-width:800px;margin:auto;">
     <h2>💰 Price List - No Hidden Charges</h2>
